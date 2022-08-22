@@ -1,0 +1,13 @@
+{
+  "name": "nitrogen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "llx404",
+  "devDependencies": {
+    "electron": "^9.4.0"
+  }
+}

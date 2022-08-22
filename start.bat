@@ -1,0 +1,2 @@
+echo npm start
+pause
