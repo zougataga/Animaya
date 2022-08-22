@@ -1,2 +1,2 @@
-echo npm start
+npm start
 pause
