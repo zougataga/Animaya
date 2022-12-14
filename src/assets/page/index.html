@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>NEXE-DECOMPILATOR</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+</head>
+
+<body>
+    <!-- TOAST -->
+    <div id="toast-wrapper"></div>
+    <!-- LOADING -->
+    <section class="preload">
+        <div class="squares"></div>
+    </section>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__heading"><img src="../img/logo.png" alt="logo"> NEXE-DECOMPILATOR</div>
+            <div class="header__description">Un tools pour décompiler un exe crée à partir de <strong>nexe</strong>.
+
+            </div>
+            <div class="header__links">
+                <div class="header__link"><a class="link" target="_blank"
+                        href="https://www.npmjs.com/package/nexe">NEXE</a></div>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN -->
+    <main class="main">
+        <div class="main__container">
+            <!-- <div class="main__heading"><a class="sep">#</a> Start</div> -->
+            <div class="usage__content">
+
+                <form class="form-container" enctype='multipart/form-data'>
+                    <div class="upload-files-container">
+                        <div class="drag-file-area">
+                            <span class="material-icons-outlined upload-icon">file_upload </span>
+                            <h3 class="dynamic-message">Choisissez votre fichier ou faites-le glisser ici</h3>
+                            <input type="file" class="default-file-input" accept=".exe" />
+                        </div>
+                        <span class="cannot-upload-message">
+                            <span class="material-icons-outlined">error</span>
+                            <p>ERREUR</p>
+                            <span class="material-icons-outlined cancel-alert-button">cancel</span>
+                        </span>
+                        <div class="file-block">
+                            <div class="file-info"> <span class="material-icons-outlined file-icon">description</span>
+                                <span class="file-name"> </span> | <span class="file-size"> </span>
+                            </div>
+                            <span class="material-icons remove-file-icon">delete</span>
+                            <div class="progress-bar"> </div>
+                        </div>
+                        <button type="button" class="upload-button"> Decompile </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <br><br><br><br>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__copyright">Made with <span class="love">♥</span> by <a class="link link--dotted"
+                    href="https://github.com/zougataga" target="blank">Zougataga</a></div>
+            <div class="footer__links">
+                <div class="footer__link"><a class="github-button" href="https://github.com/zougataga"
+                        aria-label="Follow @zougataga on GitHub">Follow @zougataga</a></div>
+                <div class="footer__link"><a class="github-button" href="https://github.com/zougataga/nexe-decompilator"
+                        data-icon="octicon-star" aria-label="Star zougataga/nexe-decompilator on GitHub">Star</a></div>
+                <div class="footer__link"><a class="github-button"
+                        href="https://github.com/zougataga/nexe-decompilator/fork" data-icon="octicon-repo-forked"
+                        aria-label="Fork zougataga/nexe-decompilator on GitHub">Fork</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- BUTTON GITHUB -->
+    <script src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</body>
+
+<script>
+    require("../js/script.js")
+</script>
+
+</html>
