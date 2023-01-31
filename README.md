@@ -5,12 +5,12 @@
   </p>
 </div>
 
-## Start
+### Start
 ```js
 npm i & npm start
 ```
 
-## Example
+### Example
 
 <img src="https://cdn.discordapp.com/attachments/1018282509764669550/1052990542440575006/image.png" width="500"/>
 <img src="https://cdn.discordapp.com/attachments/1018282509764669550/1052990675513245776/image.png" width="500"/>
