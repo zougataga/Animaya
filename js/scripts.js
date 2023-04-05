@@ -33,7 +33,7 @@ submit.addEventListener("click", async () => {
                         url = URL.createObjectURL(blob),
                         a = document.createElement('a');
                     a.href = url;
-                    a.download = 'ma-video.mp4';
+                    a.download = 'https-github-zougataga.mp4';
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
