@@ -89,7 +89,7 @@ export default function withMiddleware({
             try {
                 req.body = JSON.parse(req.body)
             } catch (error) {
-                console.log('BODY PARSE ERROR : ', req.body);
+                // console.log('BODY PARSE ERROR : ', error);
             }
 
             try {
