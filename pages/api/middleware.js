@@ -1,19 +1,23 @@
 import cipherData from 'cipherdata';
-import Cors from 'micro-cors';
 import db from '../../src/lib/db';
 import { validId } from '../../src/lib/Id';
 import { getUser } from '../../src/lib/Id';
 export default function withMiddleware({
     method,
     verifid,
-    captcha,
     rate = true,
     go
 }) {
-    return (Cors({
-        allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-        origin: '*',
-    }))(async (req, res) => {
+    return async (req, res) => {
+        res.setHeader('Access-Control-Allow-Credentials', true)
+        res.setHeader('Access-Control-Allow-Origin', '*')
+        // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+        res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+        res.setHeader(
+          'Access-Control-Allow-Headers',
+          'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+        );
+
         let ip = (
             req.headers['x-forwarded-for'] ||
             req.connection.remoteAddress
@@ -29,6 +33,7 @@ export default function withMiddleware({
             agent: (req.headers['user-agents'] || req.headers['User-agents']),
             ...req
         };
+        
 
         if (rate && !(() => {
             const
@@ -126,5 +131,5 @@ export default function withMiddleware({
             return
         }
         return go(req, res);
-    });
+    };
 }
