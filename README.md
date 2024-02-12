@@ -1,6 +1,7 @@
 <div align="center">
-  <h3>screenshoot-recorder</h3>
+      <img src="./public/icons/logo.png" alt="Logo" width="80" height="80">
+  <h3>Animayar</h3>
   <p>
-    <a target="_blank" href="https://zougataga.github.io/screenshoot-recorder/">Demo</a> 
+    <a target="_blank" href="#">Demo</a> 
   </p>
 </div>
