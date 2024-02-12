@@ -25,15 +25,15 @@ export default function withMiddleware({
             agent: (req.headers['user-agents'] || req.headers['User-agents']),
             ...req
         };
-        res
-            .setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
-            .setHeader('Access-Control-Allow-Origin', 'https://animaya.vercel.app')
-            .setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-            .setHeader('Access-Control-Allow-Headers', 'Content-Type')
-            .setHeader('Access-Control-Allow-Credentias', 'true')
-            .setHeader('Cache-Control', 'no-cache, no-store, must-revalidate')
-            .setHeader('Pragma', 'no-cache')
-            .setHeader('Expires', '0');
+
+        res.headers.append('Access-Control-Allow-Credentials', "true")
+        res.headers.append('Access-Control-Allow-Origin', 'https://animaya.vercel.app/') 
+        res.headers.append('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT')
+        res.headers.append(
+            'Access-Control-Allow-Headers',
+            'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+        )
+
         if (rate && !(() => {
             const
                 limit = 50,
