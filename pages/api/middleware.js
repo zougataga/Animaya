@@ -1,4 +1,5 @@
 import cipherData from 'cipherdata';
+import Cors from 'micro-cors';
 import db from '../../src/lib/db';
 import { validId } from '../../src/lib/Id';
 import { getUser } from '../../src/lib/Id';
@@ -9,7 +10,10 @@ export default function withMiddleware({
     rate = true,
     go
 }) {
-    return async (req, res) => {
+    return (Cors({
+        allowedMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        origin: '*',
+    }))(async (req, res) => {
         let ip = (
             req.headers['x-forwarded-for'] ||
             req.connection.remoteAddress
@@ -25,14 +29,6 @@ export default function withMiddleware({
             agent: (req.headers['user-agents'] || req.headers['User-agents']),
             ...req
         };
-
-        res.headers.append('Access-Control-Allow-Credentials', "true")
-        res.headers.append('Access-Control-Allow-Origin', 'https://animaya.vercel.app/') 
-        res.headers.append('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT')
-        res.headers.append(
-            'Access-Control-Allow-Headers',
-            'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-        )
 
         if (rate && !(() => {
             const
@@ -130,5 +126,5 @@ export default function withMiddleware({
             return
         }
         return go(req, res);
-    };
+    });
 }
