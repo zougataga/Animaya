@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "cipherdata": "^1.0.1",
+        "cookies-next": "^4.0.0",
+        "cross-fetch": "^4.0.0",
+        "fs": "^0.0.1-security",
+        "next": "latest",
+        "node": "^20.7.0",
+        "node-html-parser": "^6.1.12",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-infinite-observer": "^2.0.1",
+        "react-lazy-load-image-component": "^1.6.0",
+        "react-player": "^2.14.1",
+        "swiper": "^11.0.5",
+        "user-agents": "^1.1.70",
+        "zougatagadb": "^1.2.6"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
