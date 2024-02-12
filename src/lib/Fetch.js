@@ -9,8 +9,20 @@ export async function FetchClient({
             return await (await fetch(url, {
                 ...opts,
                 headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json',
+                    'Accept-Version': '1.0',
                     'user-agents': (navigator ?? window.navigator).userAgent
-                }
+                },
+                credentials: 'include',
+                mode: 'cors',
+                cache: 'no-cache',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                integrity: '',
+                keepalive: false,
+                signal: null
             })).json();
         } catch (error) {
             setLoading && setLoading(false);
