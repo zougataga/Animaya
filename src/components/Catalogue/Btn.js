@@ -21,7 +21,7 @@ export function WatchList({ data, large }) {
                         key: 'list.watchlist',
                         type: 'get',
                         data: {
-                            id: data.id
+                            id: data?.id
                         }
                     }
                 }, setLoad);
@@ -50,7 +50,7 @@ export function WatchList({ data, large }) {
                             type: 'set',
                             key: 'list.watchlist',
                             data: {
-                                id: data.id
+                                id: data?.id
                             }
                         }
                     }, setLoad);
@@ -105,7 +105,7 @@ export function Favori({ data, loading, large }) {
                         key: 'list.favoris',
                         type: 'get',
                         data: {
-                            id: data.id
+                            id: data?.id
                         }
                     }
                 }, setLoad);
@@ -134,7 +134,7 @@ export function Favori({ data, loading, large }) {
                             type: 'set',
                             key: 'list.favoris',
                             data: {
-                                id: data.id
+                                id: data?.id
                             }
                         }
                     }, setLoad);
