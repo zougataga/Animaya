@@ -329,12 +329,12 @@ export default function ({ close, success, error }) {
                 img.src = opts.imgurl[urlIndex];
             };
         if (!img) {
-            imgBase64("http://picsum.photos/1800/1200").then(setImg)
+            imgBase64("https://picsum.photos/1800/1200").then(setImg)
         }
         if (img) {
             const refresh = () => {
                 document.querySelector('#canvasCaptcha').innerHTML = `<canvas />`;
-                imgBase64("http://picsum.photos/1800/1200").then(setImg)
+                imgBase64("https://picsum.photos/1800/1200").then(setImg)
             };
             imgCaptcha(document.querySelector('canvas'), {
                 imgurl: img,
